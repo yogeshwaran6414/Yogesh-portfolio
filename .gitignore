@@ -1,0 +1,19 @@
+# Dependency and build directories
+node_modules/
+build/
+dist/
+.next/
+coverage/
+
+# Logs and system artifacts
+*.log
+.DS_Store
+
+# Environment variables & secrets (NEVER commit real credentials)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*
+!.env.example

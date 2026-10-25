@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Cinzel:wght@600;700;900&family=Inter:wght@400;600;700;800&family=Montserrat:wght@600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@600;700&family=Syne:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* =========================================================================
+   * EMBER NOIR DESIGN SYSTEM — CENTRALIZED TOKENS
+   * ========================================================================= */
+  
+  /* Primary palette */
+  --color-black: #09080B;
+  --color-burgundy: #31090D;
+  --color-deep-red: #8D160D;
+  --color-orange: #FF4A16;
+  --color-orange-light: #FF6B35;
+  --color-warm-white: #F8F4F0;
+
+  /* Supporting tokens */
+  --color-dark-surface: #151216;
+  --color-dark-surface-hover: #21181B;
+  --color-muted-dark: #2A2022;
+  --color-cream: #F3EDE5;
+  --color-cream-light: #FBF8F4;
+  --color-cream-text: #201819;
+  --color-cream-muted: #756A68;
+  --color-dark-muted: #B8AEB0;
+  --color-border-dark: rgba(248, 244, 240, 0.14);
+  --color-border-light: rgba(32, 24, 25, 0.14);
+  --color-glow: rgba(255, 74, 22, 0.32);
+
+  /* Typography tokens */
+  --font-host-grotesk: 'Host Grotesk', 'Host Grotesk Fallback', sans-serif;
+  --font-sora: 'Sora', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-syne: 'Syne', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+}
+
+@theme {
+  --color-background: var(--color-black, #09080B);
+  --color-foreground: var(--color-warm-white, #F8F4F0);
+  --color-muted: var(--color-dark-surface, #151216);
+  --color-muted-foreground: var(--color-dark-muted, #B8AEB0);
+  --color-primary: var(--color-orange, #FF4A16);
+  --color-primary-foreground: #ffffff;
+  --color-border: var(--color-border-dark, rgba(248, 244, 240, 0.14));
+}
+
+@keyframes cta69-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-cta69-marquee {
+  animation: cta69-marquee 40s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-black);
+    color: var(--color-warm-white);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-orange);
+    color: #ffffff;
+  }
+}
+
+/* Custom Cursor Rules */
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+}

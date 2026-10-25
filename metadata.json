@@ -1,0 +1,6 @@
+{
+  "name": "Creative Developer Portfolio",
+  "description": "Spider-Man themed developer portfolio featuring interactive parallax hero and pinned scroll-driven About Me section.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

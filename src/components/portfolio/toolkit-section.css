@@ -1,0 +1,60 @@
+.toolkit-section { background:#070707; color:#fff; position:relative; }
+.toolkit-heading { padding:6vw 4vw 0; width:64%; }
+.toolkit-label { display:flex; align-items:center; gap:12px; font-size:11px; letter-spacing:.16em; color:#b8aeb0; margin:0 0 24px; }
+.toolkit-label:before { content:''; width:7px; height:7px; border-radius:50%; background:#ff4a16; }
+.toolkit-heading h2 { font-size:5.5vw; line-height:1.2; font-weight:400; letter-spacing:-.045em; margin:0; }
+.toolkit-title-mask { display:block; overflow:clip; }
+.toolkit-title-line { display:block; }
+.toolkit-intro { width:75%; font-size:clamp(16px,1.25vw,24px); line-height:1.5; margin:1.5vw 0 0; }
+.toolkit-scroll { height:200vh; }
+.toolkit-sticky { position:sticky; top:0; height:100svh; display:flex; align-items:center; overflow:hidden; }
+.toolkit-track { display:flex; gap:1.6vw; padding:0 4vw; width:max-content; will-change:transform; transform:translate3d(104.6vw,0,0); }
+.toolkit-card { position:relative; width:27vw; min-height:30vw; padding:1.6vw; flex-shrink:0; border:1px solid #ffffff33; border-radius:8px; background:#161616; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; gap:70px; }
+.toolkit-fill { position:absolute; inset:0; background:linear-gradient(100deg,#f16b0d,#e61416); clip-path:circle(0% at 85% 12%); transition:clip-path .65s cubic-bezier(.22,1,.36,1); }
+.toolkit-card:is(:hover,:focus-visible) .toolkit-fill { clip-path:circle(140% at 85% 12%); }
+.toolkit-card:focus-visible { outline:2px solid #ff6b35; outline-offset:-3px; }
+.toolkit-card-top { display:flex; justify-content:space-between; align-items:center; position:relative; }
+.toolkit-number { display:flex; gap:12px; align-items:center; font-size:12px; color:#ffffff99; }
+.toolkit-arrow { width:clamp(40px,3vw,60px); height:clamp(40px,3vw,60px); border:1px solid #ffffff4d; border-radius:50%; display:grid; place-items:center; overflow:hidden; position:relative; transition:background .3s,color .3s; }
+.toolkit-arrow svg { width:20px; height:20px; transition:transform .3s; }
+.toolkit-arrow svg+svg { position:absolute; transform:translate(-160%,160%); }
+.toolkit-card:is(:hover,:focus-visible) .toolkit-arrow { background:#fff; color:#070707; }
+.toolkit-card:is(:hover,:focus-visible) .toolkit-arrow svg:first-child { transform:translate(160%,-160%); }
+.toolkit-card:is(:hover,:focus-visible) .toolkit-arrow svg+svg { transform:translate(0,0); }
+.toolkit-card-copy { position:relative; }
+.toolkit-card h3 { font-size:clamp(24px,2.1vw,40px); font-weight:400; letter-spacing:-.04em; line-height:1.15; margin:0 0 1.2vw; }
+.toolkit-card ul { list-style:disc; padding-left:16px; margin:0; display:grid; gap:.5vw; font-size:clamp(13px,1.05vw,20px); line-height:1.55; }
+.toolkit-marquee-wrap { width:100%; overflow:hidden; border-top:1px solid #ffffff1a; padding:34px 0 44px; position:relative; mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+.toolkit-marquee-track { display:flex; width:max-content; will-change:transform; animation:toolkit-marquee-scroll 32s linear infinite; }
+.toolkit-marquee-track:hover { animation-play-state:paused; }
+.toolkit-marquee-set { display:flex; align-items:center; flex-shrink:0; gap:36px; padding-right:36px; }
+.toolkit-logo-item { display:flex; align-items:center; gap:9px; color:#b8aeb0; font-size:13px; font-weight:500; white-space:nowrap; letter-spacing:.02em; transition:color .25s,transform .25s; }
+.toolkit-logo-item:hover { color:#ffffff; transform:translateY(-2px); }
+@keyframes toolkit-marquee-scroll { 0% { transform:translate3d(0,0,0); } 100% { transform:translate3d(-33.333333%,0,0); } }
+@media (prefers-reduced-motion:reduce) { .toolkit-marquee-track { animation:none; flex-wrap:wrap; justify-content:center; width:100%; } }
+@media(max-width:1025px) {
+  .toolkit-heading { width:85%; padding:15vw 5vw 0; }
+  .toolkit-heading h2 { font-size:7vw; }
+  .toolkit-intro { width:100%; font-size:2.5vw; margin-top:5vw; }
+  .toolkit-scroll { height:275vh; }
+  .toolkit-track { gap:2.5vw; padding:0 5vw; }
+  .toolkit-card { width:55vw; min-height:65vw; padding:3vw; }
+  .toolkit-card h3 { font-size:4vw; }
+  .toolkit-card ul { font-size:2vw; gap:1vw; }
+}
+@media(max-width:767px) {
+  .toolkit-heading { width:100%; }
+  .toolkit-heading h2 { font-size:9vw; }
+  .toolkit-intro { font-size:4.5vw; }
+  .toolkit-track { gap:6vw; }
+  .toolkit-card { width:75vw; min-height:85vw; padding:5vw; gap:50px; }
+  .toolkit-card h3 { font-size:6.5vw; margin-bottom:4vw; }
+  .toolkit-card ul { font-size:3.5vw; gap:1.8vw; }
+}
+@media(prefers-reduced-motion:reduce), (max-height:500px) {
+  .toolkit-scroll { height:auto; }
+  .toolkit-sticky { position:relative; height:auto; padding:40px 0; overflow:visible; }
+  .toolkit-track { width:100%; flex-wrap:wrap; transform:none !important; }
+  .toolkit-card { flex:1 1 290px; min-height:360px; }
+  .toolkit-fill,.toolkit-arrow,.toolkit-arrow svg { transition:none; }
+}
